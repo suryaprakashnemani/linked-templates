@@ -306,7 +306,7 @@
                     "fileUris": [
                         "[concat(variables('stgURL'), 'required-software/hws-bootstrap.sh')]"
                     ],
-                    "commandToExecute": "[concat('bash hws-bootstrap.sh -u ', parameters('adminUsername'), ' -j ', parameters('adJoinUsername'), ' -p ''', parameters('adJoinPassword'), ''' -d ', parameters('adJoinDomainName'), ' -a ', parameters('adJoinAdminGroup'), ' -e ', parameters('adJoinStage'), ' -c ', parameters('adJoinProjectCode'), ' -g ', parameters('adJoinUsersGroup'))]",
+                    "commandToExecute": "[concat('bash hws-bootstrap.sh --ad-user ', parameters('adJoinUsername'), ' --ad-password ''', parameters('adJoinPassword'), ''' --ad-fqdn ', parameters('adDomain'), ' --ad-admin-group ', parameters('adAdminGroup'), ' --group-dn ', parameters('adGroupDn'), ' --allowed-dn ', parameters('adAllowedDn'))]",
                     "storageAccountName": "[parameters('StorageAccountName')]",
                     "storageAccountKey": "[parameters('storageAccountKey')]"
                 }
